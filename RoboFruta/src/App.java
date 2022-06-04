@@ -2,6 +2,12 @@
 
 public class App {
     public static void main(String[] args) {
-        Ambiente a = new Ambiente(0, 0);
-        a.matrizAmbiente();
+        Robo a = new Robo();
+    for(int i = 0; i< 3;i++){
+        for(int j = 0; j <2; j++ )
+    
+        a.mover();}
+
+ 
 }}
+
