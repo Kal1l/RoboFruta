@@ -1,38 +1,42 @@
 public class Ambiente2 {
-    private int x;
-    public int getX() {
-        return x;
-    }
-    public void setX(int x) {
-        this.x = x;
-    }
-    private int y;
-    public int getY() {
-        return y;
-    }
-    public void setY(int y) {
-        this.y = y;
+    private int tamanho;//tamanho da matriz
+    public int getTamanho() {
+        return tamanho;
     }
 
-    public Ambiente2(int x,int y){
-        this.x=x;
-        this.y=y;
+    private char[][] matriz;//matriz de caractéres
+    public char[][] getMatriz() {
+        return matriz;
+    }
+    public void setMatriz(char[][] matriz) {
+        this.matriz = matriz;
     }
 
-    public void matriz(){
-        int linhas=getX();
-        int colunas=getY();
-        int[][] matriz = new int[linhas][colunas];
-        for(int i=0;i<linhas;i++){
-            for(int j=0;j<colunas;j++){
-                matriz[i][j]=0;
+    public Ambiente2(int tamanho){//construtor do objeto ambiente
+        this.tamanho=tamanho;
+    }
+
+    public void matriz(int x,int y){
+        int linhas=getTamanho();
+        int colunas=getTamanho();
+        matriz = new char[linhas][colunas];//matriz ambiente
+        for(int i=0;i<getTamanho();i++){
+            for(int j=0;j<getTamanho();j++){
+                matriz[i][j]='O';//espaços vazios
+                if(matriz[i][j]==matriz[x][y]){
+                    matriz[x][y]='o';//fruta
+                }
             }
+            matriz[0][0]='■';//personagem
         }
-        for(int i=0;i<linhas;i++){
-            for(int j=0;j<colunas;j++){
-                System.out.print(matriz[i][j]+" ");
+    }
+
+    public void mostrarMatriz(){     
+        for(int i=0;i<getTamanho();i++){
+            for(int j=0;j<getTamanho();j++){
+                System.out.print(matriz[i][j]+" ");//espaço para melhor vizualização
             }
-            System.out.println(" ");
+            System.out.println(" ");//espaço necessário
         }
     }
 }
