@@ -14,53 +14,28 @@ public class Robo{
         this.cor = cor;
         this.pos = pos;
     }
-
-
     public Robo() {
     }
-
     public void inicializarRobo(){
-
-        pos[0][0] = 1;
-    
+        pos[0][0] = 1; 
     }
-
-
-    public int mover(){
-
-      
+    public int mover(){ 
         Scanner input = new Scanner(System.in);
-        
         int[][] pos = {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-
         int movimento;
-
-        movimento = input.nextInt();
-        
-      switch (movimento){
-
+        movimento = input.nextInt(); 
+      switch (movimento);
         case 1:
-
         pos[x++][y]= 1;
-      
-
         for(int n[]:pos ){
             for(int v: n ){
-                System.out.printf("%d  " , v );
-                
+                System.out.printf("%d  " , v );             
             }
             System.out.printf("%n");
         }
-
-
      break;  
-     
-
         case 2:
-
         pos[x--][y]= 1;
-      
-
         for(int n[]:pos ){
             for(int v: n ){
                 System.out.printf("%d  " , v );
@@ -69,19 +44,9 @@ public class Robo{
             System.out.printf("%n");
         }
      break; 
-        
-    
-    
+           
     };
-
-
-
     
     return pos[0][0];}
     
-
-   
-
-
-
 }
