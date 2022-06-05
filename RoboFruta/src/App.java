@@ -17,7 +17,12 @@ public class App {
         //loop do jogo
         do{
             movimento=input.next();
-            robo.mover(movimento);
+            try {
+                robo.mover(movimento);
+            } catch (MovimentoInvalidoException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             //coordenadas do robô são puxadas da própria classe robô
             roboX=robo.getX();
             roboY=robo.getY();
