@@ -12,18 +12,42 @@ public class Robo2 {
         //this.cor=cor;
     }
 
-    public void mover(String movimento){;//ainda tem que trabalha na excessão
+    public void mover(String movimento) throws MovimentoInvalidoException {;//ainda tem que trabalha na excessão
         //fazer o movimento propriamente dito,talvez usar o setMatriz(?)
         if(movimento.equals("up")){
+            if(x-1<0) throw new MovimentoInvalidoException();
             x--;
         }
         else if(movimento.equals("down")){
+            if(x+1>4) throw new MovimentoInvalidoException();
             x++;
         }
         else if(movimento.equals("right")){
+            if(y+1>4) throw new MovimentoInvalidoException();
             y++;
         }
         else if(movimento.equals("left")){
+            if(y-1<0) throw new MovimentoInvalidoException();
+            y--;
+        }}
+
+
+        public void mover(int movimento) throws MovimentoInvalidoException{
+        
+        if(movimento==1){
+            if(x-1<0) throw new MovimentoInvalidoException();
+            x--;
+        }
+        else if(movimento==2){
+            if(x+1>4) throw new MovimentoInvalidoException();
+            x++;
+        }
+        else if(movimento==3){
+            if(y+1>4) throw new MovimentoInvalidoException();
+            y++;
+        }
+        else if(movimento==4){
+            if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
     }
