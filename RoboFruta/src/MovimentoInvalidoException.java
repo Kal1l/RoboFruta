@@ -1,3 +1,8 @@
-public class MovimentoInvalidoException {
-    
+public class MovimentoInvalidoException extends Exception {
+    public String toString(){
+        
+        return "Movimento Inválido,tente novamente";
+    }
+       
 }
+
