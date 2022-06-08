@@ -11,7 +11,7 @@ public class Ambiente {
                     matriz[roboX][roboY]='■';
                 }
                 else if(matriz[i][j]==matriz[robo2X][robo2Y]){
-                    matriz[robo2X][robo2Y]='°';
+                    matriz[robo2X][robo2Y]='O';
                 }
                 else if(matriz[i][j]==matriz[frutaX][frutaY]){
                     matriz[frutaX][frutaY]='*';

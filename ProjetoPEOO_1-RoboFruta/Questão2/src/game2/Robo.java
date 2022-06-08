@@ -7,10 +7,10 @@ public class Robo {
     protected int y=0;
     protected String cor; 
 
-    public Robo(/*String cor*/){ //construtor do objeto robô(cor está comentado pra facilitar na velocidade dos testes)
+    public Robo(String cor){ //construtor do objeto robô(cor está comentado pra facilitar na velocidade dos testes)
         x=0;
         y=0;
-        //this.cor=cor;
+        this.cor=cor;
     }
 
     public void mover(String movimento) throws MovimentoInvalidoException {;
