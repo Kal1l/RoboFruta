@@ -52,10 +52,14 @@ public class Robo {
     }
         /*método de gera número aleatório
         !!!!!!!!!!!!!![ALERTA:NÃO ESTÁ FUNCIONANDO/NÃO FOI TESTADO]!!!!!!!!!!!!!!!!!!*/
-        public int aleatorio(int min,int max){
-            Random movaleatório=new Random();
-            int numRand= movaleatório.nextInt((max-min)+1)+min;
-            return numRand;
+        public int aleatorio(){
+            Random random=new Random();
+            for(int i =0;i<=5;){
+                return random.nextInt(0,5)
+                +0;
+
+            }
+            return 0;
         }
     //condição pro fim do jogo
     public boolean comeufruta(int frutaX,int frutaY){

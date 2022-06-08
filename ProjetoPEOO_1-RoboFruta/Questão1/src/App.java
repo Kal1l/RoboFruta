@@ -15,13 +15,13 @@ public class App {
         //Matriz inicial do programa
         ambiente.matriz(linha,coluna,0,0);
         ambiente.mostrarMatriz();
-        String movimento; //variável pro scanner de movimento
+        //String movimento; //variável pro scanner de movimento
         int roboX;int roboY;
         //loop do jogo
         do{
-            movimento=input.next();
+           
             try {
-                robo.mover(movimento);
+                robo.mover(robo.aleatorio());
             } catch (MovimentoInvalidoException e) {
                 e.printStackTrace();
             }

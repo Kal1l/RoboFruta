@@ -1,5 +1,6 @@
 package game;
 import exception.MovimentoInvalidoException;
+import java.util.Random;
 public class Robo {
     //posições do robô no eixo
     protected int x=0;
@@ -48,6 +49,16 @@ public class Robo {
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
+    }
+
+    public int aleatorio(){
+        Random random=new Random();
+            for(int i =0;i<=5;){
+                return random.nextInt(0,5)
+                +0;
+
+            }
+            return 0;
     }
     //condição pro fim do jogo
     public boolean comeufruta(int frutaX,int frutaY){
