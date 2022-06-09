@@ -1,4 +1,5 @@
 package game;
+
 public class Ambiente {
     protected char[][] matriz = new char[5][5];//matriz ambiente
     public Ambiente(){}//construtor do objeto ambiente

@@ -48,24 +48,25 @@ public class Robo {
             y--;
         }
     }
-        /*método de gera número aleatório
-        !!!!!!!!!!!!!![ALERTA:NÃO ESTÁ FUNCIONANDO/NÃO FOI TESTADO]!!!!!!!!!!!!!!!!!!*/
+
+    //método de gera número aleatório
         public int aleatorio(){
             Random random=new Random();
             for(int i =0;i<=5;){
-                return random.nextInt(0,5)
-                +0;
+            return random.nextInt(0,5)
+            +0;
             }
             return 0;
         }
+
     //condição pro fim do jogo
-    public boolean comeufruta(int frutaX,int frutaY){
-        if(x==frutaX && y==frutaY){
-            return true;
+        public boolean comeufruta(int frutaX,int frutaY){
+            if(x==frutaX && y==frutaY){
+                return true;
+            }
+            //else
+            return false;
         }
-        //else
-        return false;
-    }
     
     public int getX() {
         return x;

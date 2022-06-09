@@ -2,7 +2,6 @@ import java.util.Scanner;
 import game2.*;
 import exception.*;
 import java.io.IOException;;
-//Erro presente, tem um pequeno problema sendo o de tudo estar invertido, robo1 é o 2° e o 2° é o primeiro
 //Erro2 presente, as vezes o robo simplesmente não se move(algo a ver com o random?)
 public class App {
     public static void main(String[] args) throws IOException {
@@ -14,22 +13,29 @@ public class App {
         cor2=input.next();
         Robo robo=new Robo(cor1);
         Robo robo2=new Robo(cor2);
-        System.out.println("|Insira a posição da fruta(posições 0-4)|");
-        int frutaX=input.nextInt();
-        int frutaY=input.nextInt();
+        int frutaX, frutaY;
+        System.out.println("Insira a posição da fruta(posições 0-4)");
+        frutaX=input.nextInt();
+        frutaY=input.nextInt();
+        boolean verificador = true;
+        while(verificador){
+            if(frutaX > 5 || frutaY > 5 || frutaX < 0 || frutaY < 0){
+                System.out.println("Posição invalida ,coloque de novo");
+                frutaX = input.nextInt();
+                frutaY = input.nextInt();
+            } else{
+                verificador = !verificador;
+            }
+        }
         ambiente.matriz(frutaX,frutaY,0,0,0,0);
         int roboX=0,roboY=0,robo2X=0,robo2Y=0,contMov1=0,contMov2=0;//contmov = contador de movimentos   
         do{
             System.out.println("----------------------------");
             System.out.println(robo.getCor());
-            if(robo.comeufruta(frutaX,frutaY)==true && robo2.comeufruta(frutaX,frutaY)==true){
-                System.out.println("Empate, foram realizados "+contMov1+"movimentos pelo"+robo.getCor() +"e" +contMov2+ "movimentos pelo"+robo2.getCor());
-                break;
-            }
             try {
                 robo.mover(robo.aleatorio());
             } catch (MovimentoInvalidoException e) {
-                e.printStackTrace();
+                System.out.println("Robô "+robo.getCor()+", "+e);
             }
             contMov1++;
             roboX=robo.getX();
@@ -37,7 +43,7 @@ public class App {
             ambiente.matriz(frutaX,frutaY,roboX,roboY,robo2X,robo2Y);
             ambiente.mostrarMatriz();
 
-            System.in.read();//comando para pausar o programa no meio, usar apenas para testes do programa
+            //System.in.read();//comando para pausar o programa no meio, usar apenas para testes do programa
 
             System.out.println(robo2.getCor());
             if(robo.comeufruta(frutaX,frutaY)==true){
@@ -47,7 +53,7 @@ public class App {
             try {
                 robo2.mover(robo2.aleatorio());
             } catch (MovimentoInvalidoException e) {
-                e.printStackTrace();
+                System.out.println("Robô "+robo2.getCor()+", "+e);
             }
             contMov2++; 
             robo2X=robo2.getX();
@@ -58,7 +64,6 @@ public class App {
                 System.out.println(robo2.getCor()+" ganhou com "+contMov2+" moviementos");
                 break;
             }
-
         }while(true);
         input.close();
     }

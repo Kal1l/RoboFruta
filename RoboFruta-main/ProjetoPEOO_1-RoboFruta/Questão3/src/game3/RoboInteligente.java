@@ -6,7 +6,6 @@ public class RoboInteligente extends Robo{
     public RoboInteligente(String cor) {
         super(cor);
     }
-
     public void mover(int movimento) throws MovimentoInvalidoException{
         if(movimento==1){
             if(x-1<0 && erro1==false){

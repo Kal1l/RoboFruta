@@ -1,16 +1,13 @@
 package game;
 import exception.MovimentoInvalidoException;
-import java.util.Random;
 public class Robo {
     //posições do robô no eixo
     protected int x=0;
     protected int y=0;
     protected String cor; 
 
-    public Robo(/*String cor*/){ //construtor do objeto robô(cor está comentado pra facilitar na velocidade dos testes)
-        x=0;
-        y=0;
-        //this.cor=cor;
+    public Robo(String cor){
+        this.cor=cor;
     }
 
     public void mover(String movimento) throws MovimentoInvalidoException {;
@@ -51,15 +48,6 @@ public class Robo {
         }
     }
 
-    public int aleatorio(){
-        Random random=new Random();
-            for(int i =0;i<=5;){
-                return random.nextInt(0,5)
-                +0;
-
-            }
-            return 0;
-    }
     //condição pro fim do jogo
     public boolean comeufruta(int frutaX,int frutaY){
         if(x==frutaX && y==frutaY){
@@ -68,17 +56,10 @@ public class Robo {
         //else
         return false;
     }
-    
     public int getX() {
         return x;
     }
-    public void setX(int x) {
-        this.x = x;
-    }
     public int getY() {
         return y;
-    }
-    public void setY(int y) {
-        this.y = y;
     }
 }
