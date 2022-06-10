@@ -7,11 +7,11 @@ public class Ambiente {
         for(int i=0;i<5;i++){
             for(int j=0;j<5;j++){
                 matriz[i][j]='.';//espaços vazios
-                if(matriz[i][j]==matriz[frutaX][frutaY]/*fruta X e Y são as coordenadas do spawn da fruta */){
-                    matriz[frutaX][frutaY]='*';//fruta
-                }
                 if(matriz[i][j]==matriz[roboX][roboY]/*robo X e Y são as coordenadas do robô */){
                     matriz[roboX][roboY]='■';//personagem
+                }
+                else if(matriz[i][j]==matriz[frutaX][frutaY]/*fruta X e Y são as coordenadas do spawn da fruta */){
+                    matriz[frutaX][frutaY]='*';//fruta
                 }
             }
         }

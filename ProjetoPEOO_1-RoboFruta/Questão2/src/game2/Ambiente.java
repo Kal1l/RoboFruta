@@ -3,7 +3,7 @@ public class Ambiente {
     protected char[][] matriz = new char[5][5];
     public Ambiente(){}
 
-    public void matriz(int frutaX,int frutaY,int roboX,int roboY,int robo2X,int robo2Y){  //adaptar para 2 robôs na matriz (concluído?)
+    public void matriz (int frutaX,int frutaY,int roboX,int roboY,int robo2X,int robo2Y){
         for(int i=0;i<5;i++){
             for(int j=0;j<5;j++){
                 matriz[i][j]='.';

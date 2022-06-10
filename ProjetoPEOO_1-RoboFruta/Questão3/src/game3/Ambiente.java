@@ -1,17 +1,20 @@
 package game3;
 public class Ambiente {
-    protected char[][] matriz = new char[5][5];//matriz ambiente
-    public Ambiente(){}//construtor do objeto ambiente
+    protected char[][] matriz = new char[5][5];
+    public Ambiente(){}
 
-    public void matriz(int frutaX,int frutaY,int roboX,int roboY){  //adaptar para 2 robôs na matriz 
+    public void matriz(int frutaX,int frutaY,int roboX,int roboY,int robo2X,int robo2Y){
         for(int i=0;i<5;i++){
             for(int j=0;j<5;j++){
-                matriz[i][j]='.';//espaços vazios
-                if(matriz[i][j]==matriz[frutaX][frutaY]/*fruta X e Y são as coordenadas do spawn da fruta */){
-                    matriz[frutaX][frutaY]='*';//fruta
+                matriz[i][j]='.';
+                if(matriz[i][j]==matriz[roboX][roboY]){
+                    matriz[roboX][roboY]='■';
                 }
-                if(matriz[i][j]==matriz[roboX][roboY]/*robo X e Y são as coordenadas do robô */){
-                    matriz[roboX][roboY]='■';//personagem
+                else if(matriz[i][j]==matriz[robo2X][robo2Y]){
+                    matriz[robo2X][robo2Y]='O';
+                }
+                else if(matriz[i][j]==matriz[frutaX][frutaY]){
+                    matriz[frutaX][frutaY]='*';
                 }
             }
         }

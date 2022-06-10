@@ -1,19 +1,18 @@
 package game3;
 import exception.MovimentoInvalidoException;
+import java.util.Random;
 public class Robo {
-    //posições do robô no eixo
     protected int x=0;
     protected int y=0;
     protected String cor; 
 
-    public Robo(/*String cor*/){ //construtor do objeto robô(cor está comentado pra facilitar na velocidade dos testes)
+    public Robo(String cor){
         x=0;
         y=0;
-        //this.cor=cor;
+        this.cor=cor;
     }
 
     public void mover(String movimento) throws MovimentoInvalidoException {;
-        //fazer o movimento propriamente dito,talvez usar o setMatriz(?)
         if(movimento.equals("up")){
             if(x-1<0) throw new MovimentoInvalidoException();
             x--;
@@ -32,7 +31,7 @@ public class Robo {
         }
     }
 
-        public void mover(int movimento) throws MovimentoInvalidoException{
+    public void mover(int movimento) throws MovimentoInvalidoException{
         if(movimento==1){
             if(x-1<0) throw new MovimentoInvalidoException();
             x--;
@@ -50,12 +49,20 @@ public class Robo {
             y--;
         }
     }
-    //condição pro fim do jogo
+
+    public int aleatorio(){
+         Random random=new Random();
+        for(int i =0;i<=5;){
+        return random.nextInt(0,5)
+        +0;
+        }
+        return 0;
+    }
+
     public boolean comeufruta(int frutaX,int frutaY){
         if(x==frutaX && y==frutaY){
             return true;
         }
-        //else
         return false;
     }
     
@@ -70,5 +77,11 @@ public class Robo {
     }
     public void setY(int y) {
         this.y = y;
+    }
+    public String getCor(){
+        return cor;
+    }
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 }
