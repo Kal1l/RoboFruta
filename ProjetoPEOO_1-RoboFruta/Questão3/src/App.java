@@ -6,7 +6,7 @@ public class App {
         Scanner input=new Scanner(System.in);
         Ambiente ambiente=new Ambiente();
         String cor1,cor2;
-        System.out.println("Insira a cor do robo nomal(■) e do robo inteligente(O)");
+        System.out.println("Insira a cor do robo normal(■) e do robo inteligente(O)");
         cor1=input.next();
         cor2=input.next();
         Robo robo=new Robo(cor1);
@@ -17,7 +17,7 @@ public class App {
         frutaY=input.nextInt();
         boolean verificador = true;
         while(verificador){
-            if(frutaX > 5 || frutaY > 5 || frutaX < 0 || frutaY < 0){
+            if(frutaX >= 5 || frutaY >= 5 || frutaX < 0 || frutaY < 0){
                 System.out.println("Posição invalida, insira novamente(posições 0-4): ");
                 frutaX = input.nextInt();
                 frutaY = input.nextInt();

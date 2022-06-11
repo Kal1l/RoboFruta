@@ -29,6 +29,9 @@ public class Robo {
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
+        else{
+            throw new MovimentoInvalidoException();
+        }
     }
 
         public void mover(int movimento) throws MovimentoInvalidoException{
@@ -47,6 +50,9 @@ public class Robo {
         else if(movimento==4){
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
+        }
+        else{
+            throw new MovimentoInvalidoException();
         }
     }
         //método de gera número aleatório

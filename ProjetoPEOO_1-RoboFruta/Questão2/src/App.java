@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import game2.*;
 import exception.*;
-import game.Robo;
+import game2.Robo;
 public class App {
     public static void main(String[] args){
         Scanner input=new Scanner(System.in);
@@ -18,7 +18,7 @@ public class App {
         frutaY=input.nextInt();
         boolean verificador = true;
         while(verificador){
-            if(frutaX > 5 || frutaY > 5 || frutaX < 0 || frutaY < 0){
+            if(frutaX >= 5 || frutaY >= 5 || frutaX < 0 || frutaY < 0){
                 System.out.println("Posição invalida, insira novamente(posições 0-4): ");
                 frutaX = input.nextInt();
                 frutaY = input.nextInt();

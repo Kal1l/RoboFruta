@@ -51,6 +51,9 @@ public class Robo {
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
+        else{
+            throw new MovimentoInvalidoException();
+        }
     }
 
     //condição pro fim do jogo

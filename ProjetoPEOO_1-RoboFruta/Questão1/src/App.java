@@ -17,7 +17,7 @@ public class App {
         boolean verificador = true;
         //loop para posições inválidas no eixo para a posição da fruta
         while(verificador){
-            if(frutaX > 5 || frutaY > 5 || frutaX < 0 || frutaY < 0){
+            if(frutaX >= 5 || frutaY >= 5 || frutaX < 0 || frutaY < 0){
                 System.out.println("Posição invalida, insira novamente(posições 0-4): ");
                 frutaX = input.nextInt();
                 frutaY = input.nextInt();

@@ -29,6 +29,9 @@ public class Robo {
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
+        else{
+            throw new MovimentoInvalidoException();
+        }
     }
 
     public void mover(int movimento) throws MovimentoInvalidoException{
@@ -48,6 +51,9 @@ public class Robo {
             if(y-1<0) throw new MovimentoInvalidoException();
             y--;
         }
+        else{
+            throw new MovimentoInvalidoException();
+        }
     }
 
     public int aleatorio(){
@@ -64,7 +70,7 @@ public class Robo {
             return true;
         }
         return false;
-    }
+    }  
     
     public int getX() {
         return x;

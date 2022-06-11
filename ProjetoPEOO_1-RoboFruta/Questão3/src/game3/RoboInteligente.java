@@ -51,5 +51,8 @@ public class RoboInteligente extends Robo{
             }
             y--;
         }
+        else{
+            throw new MovimentoInvalidoException();
+        }
     }
 }
